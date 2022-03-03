@@ -38,34 +38,24 @@
 
     <!-- TODO #4 - Loop over the search results to display all job fields. -->
 
-    <table class="job-listing">
-        <tr th:each="job : ${jobs}">
-            <td>
-                <p>
-                    <span>ID: </span>
-                    <span th:text = "${job.id}"></span>
-                </p>
-                <p>
-                    <span>Name: </span>
-                    <span th:text = "${job.name}"></span>
-                </p>
-                <p>
-                    <span>Employer: </span>
-                    <span th:text = "${job.employer}"></span>
-                </p>
-                <p>
-                    <span>Location: </span>
-                    <span th:text = "${job.location}"></span>
-                </p>
-                <p>
-                    <span>Position Type: </span>
-                    <span th:text = "${job.positionType}"></span>
-                </p>
-                <p>
-                    <span>Skill: </span>
-                    <span th:text = "${job.coreCompetency}"></span>
-                </p>
-            </td>
+    <table th:each="job : ${jobs}" class="job-listing">
+        <tr>
+            <td th:text = "'ID: ' + ${job.id}"></td>
+        </tr>
+        <tr>
+            <td th:text = "'Name: ' + ${job.name}"></td>
+        </tr>
+        <tr>
+            <td th:text = "'Employer: ' + ${job.employer}"></td>
+        </tr>
+        <tr>
+            <td th:text = "'Location: ' + ${job.location}"></td>
+        </tr>
+        <tr>
+            <td th:text = "'Position Type: ' + ${job.positionType}"></td>
+        </tr>
+        <tr>
+            <td th:text = "'Skill: ' + ${job.coreCompetency}"></td>
         </tr>
     </table>
 
