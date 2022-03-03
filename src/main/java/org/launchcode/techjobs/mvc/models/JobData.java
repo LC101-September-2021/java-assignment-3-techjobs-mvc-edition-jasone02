@@ -206,6 +206,16 @@ public class JobData {
         }
     }
 
+    public static ArrayList<String> getAllJobs() {
+        loadData();
+        ArrayList<String> jobNames = new ArrayList<String>();
+        for (int i = 0; i < allJobs.size(); i++) {
+            jobNames.add(allJobs.get(i).getName());
+        }
+        jobNames.sort(new NameSorter());
+        return jobNames;
+    }
+
     public static ArrayList<Employer> getAllEmployers() {
         loadData();
         allEmployers.sort(new NameSorter());
